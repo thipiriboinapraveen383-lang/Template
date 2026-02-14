@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Your Name · Portfolio Template</title>
+  
+  <!-- Google Web Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Lightbox CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
+  
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Three.js Import Map -->
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.128.0/build/three.module.js"
+      }
+    }
+  </script>
+</head>
+<body>
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="loader"></div>
+  </div>
+
+  <!-- Custom 404 Section (Hidden by default) -->
+  <div id="custom-404" style="display: none;">
+    <div class="error-container">
+      <h1 class="error-code">404</h1>
+      <h2 class="error-title">Page Not Found</h2>
+      <p class="error-text">The page you're looking for doesn't exist or has been moved.</p>
+      <a href="#home" class="btn-3d error-btn">Back to Home</a>
+    </div>
+  </div>
+
+  <!-- 3D Canvas Background -->
+  <canvas id="bg-canvas"></canvas>
+  
+  <!-- Mouse Glow Effect -->
+  <div id="mouse-glow"></div>
+
+  <!-- Main Wrapper -->
+  <div class="wrapper">
+    
+    <!-- ===== RESPONSIVE NAVIGATION ===== -->
+    <nav class="navbar">
+      <div class="nav-brand">
+        <a href="#home" class="brand-text">YOUR<span class="brand-dot">.</span></a>
+      </div>
+      
+      <div class="nav-menu" id="nav-menu">
+        <ul class="nav-list">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </div>
+      
+      <div class="nav-toggle" id="nav-toggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </nav>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section id="home" class="section hero-section">
+      <div class="hero-grid">
+        <div class="hero-content glass-card" data-gsap="fadeUp">
+          <div class="hero-badge">
+            <span class="badge-text">YOUR TITLE</span>
+          </div>
+          <h1 class="hero-title">
+            <span class="title-line">First Name</span>
+            <span class="title-line accent">Last Name</span>
+          </h1>
+          <p class="hero-description">
+            This is a placeholder description for your portfolio template. 
+            Replace this text with your own professional summary and background information.
+          </p>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-number">00+</span>
+              <span class="stat-label">Stat 1</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">00</span>
+              <span class="stat-label">Stat 2</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">00+</span>
+              <span class="stat-label">Stat 3</span>
+            </div>
+          </div>
+          <div class="hero-actions">
+            <a href="#projects" class="btn-3d primary">✨ View My Work</a>
+            <!-- ===== RESUME DOWNLOAD BUTTON ===== -->
+            <a href="#" id="download-resume" class="btn-resume">📄 Download Resume</a>
+            <a href="#contact" class="btn-outline">Let's Talk</a>
+          </div>
+        </div>
+        
+        <div class="hero-visual" data-gsap="fadeRight">
+          <div class="floating-shape shape-1"></div>
+          <div class="floating-shape shape-2"></div>
+          <div class="floating-shape shape-3"></div>
+          <div class="profile-container">
+            <div class="profile-avatar">
+              <span class="avatar-text">Y</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT SECTION ===== -->
+    <section id="about" class="section about-section">
+      <div class="section-header" data-gsap="fadeUp">
+        <h2>About Me</h2>
+        <div class="header-line"></div>
+      </div>
+      
+      <div class="about-grid">
+        <div class="about-card glass-card" data-gsap="fadeLeft">
+          <div class="card-icon">
+            <i class="fas fa-user-graduate"></i>
+          </div>
+          <h3>Education</h3>
+          <p class="about-subtitle">Your Degree</p>
+          <p class="about-text">University Name · Year-Year</p>
+          <div class="about-highlight">
+            <span class="highlight-badge">Your Highlight</span>
+          </div>
+        </div>
+        
+        <div class="about-card glass-card" data-gsap="fadeUp">
+          <div class="card-icon">
+            <i class="fas fa-briefcase"></i>
+          </div>
+          <h3>Experience</h3>
+          <p class="about-subtitle">X Years / X Internships</p>
+          <p class="about-text">Your Field · Industry</p>
+          <div class="about-highlight">
+            <span class="highlight-badge">Companies/Organizations</span>
+          </div>
+        </div>
+        
+        <div class="about-card glass-card" data-gsap="fadeRight">
+          <div class="card-icon">
+            <i class="fas fa-trophy"></i>
+          </div>
+          <h3>Achievements</h3>
+          <p class="about-subtitle">Your Achievement 1</p>
+          <p class="about-text">Your Achievement 2 · Your Achievement 3</p>
+          <div class="about-highlight">
+            <span class="highlight-badge">Your Highlight</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="about-bio glass-card" data-gsap="fadeUp">
+        <div class="bio-content">
+          <p class="bio-text">
+            This is a placeholder bio section. Replace this text with your personal story, 
+            your passion for your field, and what drives you professionally. Share your journey, 
+            your values, and what makes you unique as a professional.
+          </p>
+          <div class="bio-quote">
+            <i class="fas fa-quote-left"></i>
+            <span>Your personal motto or favorite quote goes here</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== EXPERIENCE SECTION ===== -->
+    <section id="experience" class="section experience-section">
+      <div class="section-header" data-gsap="fadeUp">
+        <h2>Work Experience</h2>
+        <div class="header-line"></div>
+      </div>
+      
+      <div class="timeline">
+        <!-- Experience 1 -->
+        <div class="timeline-item left" data-gsap="fadeLeft">
+          <div class="timeline-content glass-card">
+            <div class="timeline-icon">
+              <i class="fas fa-briefcase"></i>
+            </div>
+            <div class="timeline-header">
+              <span class="company">Company Name 1</span>
+              <span class="position">Your Position Title</span>
+              <span class="duration"><i class="far fa-calendar"></i> Start Date - End Date · Location</span>
+            </div>
+            <ul class="achievements">
+              <li>Describe your key achievement or responsibility in this role. Use action verbs and quantify results where possible.</li>
+              <li>Another important accomplishment that demonstrates your skills and value to the organization.</li>
+              <li>A third bullet point highlighting additional responsibilities or projects you contributed to.</li>
+              <li>Fourth achievement that shows your impact and professional growth during this role.</li>
+            </ul>
+            <div class="tech-stack">
+              <span class="tech-badge">Skill 1</span>
+              <span class="tech-badge">Skill 2</span>
+              <span class="tech-badge">Skill 3</span>
+              <span class="tech-badge">Skill 4</span>
+              <span class="tech-badge">Skill 5</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Experience 2 -->
+        <div class="timeline-item right" data-gsap="fadeRight">
+          <div class="timeline-content glass-card">
+            <div class="timeline-icon">
+              <i class="fas fa-briefcase"></i>
+            </div>
+            <div class="timeline-header">
+              <span class="company">Company Name 2</span>
+              <span class="position">Your Position Title</span>
+              <span class="duration"><i class="far fa-calendar"></i> Start Date - End Date · Location</span>
+            </div>
+            <ul class="achievements">
+              <li>Describe your key achievement or responsibility in this role. Use action verbs and quantify results where possible.</li>
+              <li>Another important accomplishment that demonstrates your skills and value to the organization.</li>
+              <li>A third bullet point highlighting additional responsibilities or projects you contributed to.</li>
+              <li>Fourth achievement that shows your impact and professional growth during this role.</li>
+            </ul>
+            <div class="tech-stack">
+              <span class="tech-badge">Skill 1</span>
+              <span class="tech-badge">Skill 2</span>
+              <span class="tech-badge">Skill 3</span>
+              <span class="tech-badge">Skill 4</span>
+              <span class="tech-badge">Skill 5</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SKILLS SECTION ===== -->
+    <section id="skills" class="section skills-section">
+      <div class="section-header" data-gsap="fadeUp">
+        <h2>Technical Skills</h2>
+        <div class="header-line"></div>
+      </div>
+      
+      <div class="skills-grid">
+        <!-- Category 1 -->
+        <div class="skill-category glass-card" data-gsap="fadeUp">
+          <h3 class="category-title">
+            <i class="fas fa-code"></i> Category 1
+          </h3>
+          <div class="skill-items">
+            <div class="skill-item" data-progress="90">
+              <span class="skill-name">Skill Name</span>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 90%"></div>
+              </div>
+            </div>
+            <div class="skill-item" data-progress="80">
+              <span class="skill-name">Skill Name</span>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 80%"></div>
+              </div>
+            </div>
+            <div class="skill-item" data-progress="75">
+              <span class="skill-name">Skill Name</span>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 75%"></div>
+              </div>
+            </div>
+            <div class="skill-item" data-progress="70">
+              <span class="skill-name">Skill Name</span>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 70%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Category 2 -->
+        <div class="skill-category glass-card" data-gsap="fadeUp" data-delay="0.1">
+          <h3 class="category-title">
+            <i class="fas fa-robot"></i> Category 2
+          </h3>
+          <div class="skill-items">
+            <div class="skill-item" data-progress="85">
+              <span class="skill-name">Skill Name</span>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 85%"></div>
+              </div>
+            </div>
+            <div class="skill-item" data-progress="80">
+              <span class="skill-name">Skill Name</span>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 80%"></div>
+              </div>
+            </div>
+            <div class="skill-item" data-progress="85">
+              <span class="skill-name">Skill Name</span>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 85%"></div>
+              </div>
+            </div>
+            <div class="skill-item" data-progress="80">
+              <span class="skill-name">Skill Name</span>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 80%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Category 3 -->
+        <div class="skill-category glass-card" data-gsap="fadeUp" data-delay="0.2">
+          <h3 class="category-title">
+            <i class="fas fa-tools"></i> Category 3
+          </h3>
+          <div class="skill-items">
+            <div class="skill-item" data-progress="85">
+              <span class="skill-name">Skill Name</span>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 85%"></div>
+              </div>
+            </div>
+            <div class="skill-item" data-progress="80">
+              <span class="skill-name">Skill Name</span>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 80%"></div>
+              </div>
+            </div>
+            <div class="skill-item" data-progress="90">
+              <span class="skill-name">Skill Name</span>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 90%"></div>
+              </div>
+            </div>
+            <div class="skill-item" data-progress="75">
+              <span class="skill-name">Skill Name</span>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 75%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Soft Skills -->
+      <div class="soft-skills glass-card" data-gsap="fadeUp">
+        <h3 class="category-title">
+          <i class="fas fa-users"></i> Soft Skills
+        </h3>
+        <div class="soft-skills-grid">
+          <span class="soft-skill"><i class="fas fa-check-circle"></i> Soft Skill 1</span>
+          <span class="soft-skill"><i class="fas fa-check-circle"></i> Soft Skill 2</span>
+          <span class="soft-skill"><i class="fas fa-check-circle"></i> Soft Skill 3</span>
+          <span class="soft-skill"><i class="fas fa-check-circle"></i> Soft Skill 4</span>
+          <span class="soft-skill"><i class="fas fa-check-circle"></i> Soft Skill 5</span>
+          <span class="soft-skill"><i class="fas fa-check-circle"></i> Soft Skill 6</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROJECTS SECTION with RESPONSIVE SLIDER ===== -->
+    <section id="projects" class="section projects-section">
+      <div class="section-header" data-gsap="fadeUp">
+        <h2>Featured Projects</h2>
+        <div class="header-line"></div>
+      </div>
+      
+      <div class="slider-container">
+        <div class="slider" id="project-slider">
+          
+          <!-- Project 1 -->
+          <div class="slide" data-gsap="fadeUp">
+            <div class="project-card glass-card">
+              <div class="project-media">
+                <a href="https://via.placeholder.com/800x600/0066ff/ffffff?text=Project+1" data-lightbox="projects" data-title="Project 1 - Description">
+                  <img src="https://via.placeholder.com/600x400/0066ff/ffffff?text=Project+1" alt="Project 1" class="project-image">
+                </a>
+                <div class="project-overlay">
+                  <a href="https://via.placeholder.com/800x600/0066ff/ffffff?text=Project+1" data-lightbox="projects" data-title="Project 1 - Description" class="overlay-icon">
+                    <i class="fas fa-search-plus"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">Project Title 1</h3>
+                <p class="project-desc">Project description goes here. Explain what the project does, the problem it solves, and your role in building it.</p>
+                <div class="project-features">
+                  <span class="feature"><i class="fas fa-check"></i> Feature 1</span>
+                  <span class="feature"><i class="fas fa-check"></i> Feature 2</span>
+                  <span class="feature"><i class="fas fa-check"></i> Feature 3</span>
+                </div>
+                <div class="project-tech">
+                  <span class="tech-tag">Tech 1</span>
+                  <span class="tech-tag">Tech 2</span>
+                  <span class="tech-tag">Tech 3</span>
+                  <span class="tech-tag">Tech 4</span>
+                </div>
+                <div class="project-links">
+                  <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+                  <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Project 2 -->
+          <div class="slide" data-gsap="fadeUp" data-delay="0.1">
+            <div class="project-card glass-card">
+              <div class="project-media">
+                <a href="https://via.placeholder.com/800x600/aa00ff/ffffff?text=Project+2" data-lightbox="projects" data-title="Project 2 - Description">
+                  <img src="https://via.placeholder.com/600x400/aa00ff/ffffff?text=Project+2" alt="Project 2" class="project-image">
+                </a>
+                <div class="project-overlay">
+                  <a href="https://via.placeholder.com/800x600/aa00ff/ffffff?text=Project+2" data-lightbox="projects" data-title="Project 2 - Description" class="overlay-icon">
+                    <i class="fas fa-search-plus"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">Project Title 2</h3>
+                <p class="project-desc">Project description goes here. Explain what the project does, the problem it solves, and your role in building it.</p>
+                <div class="project-features">
+                  <span class="feature"><i class="fas fa-check"></i> Feature 1</span>
+                  <span class="feature"><i class="fas fa-check"></i> Feature 2</span>
+                  <span class="feature"><i class="fas fa-check"></i> Feature 3</span>
+                </div>
+                <div class="project-tech">
+                  <span class="tech-tag">Tech 1</span>
+                  <span class="tech-tag">Tech 2</span>
+                  <span class="tech-tag">Tech 3</span>
+                  <span class="tech-tag">Tech 4</span>
+                </div>
+                <div class="project-links">
+                  <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+                  <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Project 3 -->
+          <div class="slide" data-gsap="fadeUp" data-delay="0.2">
+            <div class="project-card glass-card">
+              <div class="project-media">
+                <a href="https://via.placeholder.com/800x600/00cc99/ffffff?text=Project+3" data-lightbox="projects" data-title="Project 3 - Description">
+                  <img src="https://via.placeholder.com/600x400/00cc99/ffffff?text=Project+3" alt="Project 3" class="project-image">
+                </a>
+                <div class="project-overlay">
+                  <a href="https://via.placeholder.com/800x600/00cc99/ffffff?text=Project+3" data-lightbox="projects" data-title="Project 3 - Description" class="overlay-icon">
+                    <i class="fas fa-search-plus"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">Project Title 3</h3>
+                <p class="project-desc">Project description goes here. Explain what the project does, the problem it solves, and your role in building it.</p>
+                <div class="project-features">
+                  <span class="feature"><i class="fas fa-check"></i> Feature 1</span>
+                  <span class="feature"><i class="fas fa-check"></i> Feature 2</span>
+                  <span class="feature"><i class="fas fa-check"></i> Feature 3</span>
+                </div>
+                <div class="project-tech">
+                  <span class="tech-tag">Tech 1</span>
+                  <span class="tech-tag">Tech 2</span>
+                  <span class="tech-tag">Tech 3</span>
+                  <span class="tech-tag">Tech 4</span>
+                </div>
+                <div class="project-links">
+                  <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+                  <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Slider Controls -->
+        <button class="slider-btn prev" id="slider-prev"><i class="fas fa-chevron-left"></i></button>
+        <button class="slider-btn next" id="slider-next"><i class="fas fa-chevron-right"></i></button>
+        
+        <div class="slider-dots" id="slider-dots">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CERTIFICATIONS ===== -->
+    <section id="certifications" class="section cert-section">
+      <div class="section-header" data-gsap="fadeUp">
+        <h2>Certifications</h2>
+        <div class="header-line"></div>
+      </div>
+      
+      <div class="cert-grid">
+        <div class="cert-card glass-card" data-gsap="fadeLeft">
+          <div class="cert-icon">
+            <i class="fas fa-certificate"></i>
+          </div>
+          <h3 class="cert-title">Certification Title 1</h3>
+          <p class="cert-issuer">Issuing Organization · Date</p>
+          <a href="#" class="cert-link"><i class="fas fa-external-link-alt"></i> View Certificate</a>
+        </div>
+        
+        <div class="cert-card glass-card" data-gsap="fadeRight">
+          <div class="cert-icon">
+            <i class="fas fa-certificate"></i>
+          </div>
+          <h3 class="cert-title">Certification Title 2</h3>
+          <p class="cert-issuer">Issuing Organization · Date</p>
+          <a href="#" class="cert-link"><i class="fas fa-external-link-alt"></i> View Certificate</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT SECTION with FORM ===== -->
+    <section id="contact" class="section contact-section">
+      <div class="section-header" data-gsap="fadeUp">
+        <h2>Let's Connect</h2>
+        <div class="header-line"></div>
+      </div>
+      
+      <div class="contact-grid">
+        <div class="contact-info-card glass-card" data-gsap="fadeLeft">
+          <h3 class="info-title">Get in Touch</h3>
+          <div class="info-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <span class="info-label">Email</span>
+              <a href="mailto:your.email@example.com" class="info-value">your.email@example.com</a>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-phone-alt"></i>
+            <div>
+              <span class="info-label">Phone</span>
+              <a href="tel:+1234567890" class="info-value">+1 234 567 890</a>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <span class="info-label">Location</span>
+              <span class="info-value">Your City, Country</span>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="fab fa-linkedin"></i>
+            <div>
+              <span class="info-label">LinkedIn</span>
+              <a href="#" target="_blank" class="info-value">your-linkedin-profile</a>
+            </div>
+          </div>
+          
+          <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-medium"></i></a>
+          </div>
+        </div>
+        
+        <div class="contact-form-card glass-card" data-gsap="fadeRight">
+          <h3 class="form-title">Send a Message</h3>
+          <form id="contact-form" class="contact-form">
+            <div class="form-group">
+              <input type="text" id="name" name="name" placeholder="Your Name" required>
+              <span class="focus-border"></span>
+            </div>
+            <div class="form-group">
+              <input type="email" id="email" name="email" placeholder="Email Address" required>
+              <span class="focus-border"></span>
+            </div>
+            <div class="form-group">
+              <input type="text" id="subject" name="subject" placeholder="Subject">
+              <span class="focus-border"></span>
+            </div>
+            <div class="form-group">
+              <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+              <span class="focus-border"></span>
+            </div>
+            <button type="submit" class="btn-3d submit-btn">
+              <span>Send Message</span>
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p class="copyright">&copy; 2026 Your Name. All Rights Reserved.</p>
+        <p class="built-with">Built with <i class="fas fa-heart"></i> using Three.js & GSAP</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- JavaScript Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+  
+  <!-- Three.js Background -->
+  <script type="module" src="three-background.js"></script>
+  
+  <!-- Main JavaScript -->
+  <script src="main.js"></script>
+</body>
+</html>
